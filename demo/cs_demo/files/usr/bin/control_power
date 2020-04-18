@@ -1,0 +1,196 @@
+#!/bin/sh
+
+set_gpio_out() {
+	/usr/bin/gl_gpio.gpio set gpio20.dir=out
+	/usr/bin/gl_gpio.gpio set gpio19.dir=out
+	/usr/bin/gl_gpio.gpio set gpio18.dir=out
+	/usr/bin/gl_gpio.gpio set gpio23.dir=out
+	/usr/bin/gl_gpio.gpio set gpio22.dir=out
+	/usr/bin/gl_gpio.gpio set gpio21.dir=out
+	/usr/bin/gl_gpio.gpio set gpio6.dir=out
+	/usr/bin/gl_gpio.gpio set gpio24.dir=out
+	/usr/bin/gl_gpio.gpio set gpio8.dir=out
+	/usr/bin/gl_gpio.gpio set gpio14.dir=out
+	/usr/bin/gl_gpio.gpio set gpio15.dir=out
+	/usr/bin/gl_gpio.gpio set gpio16.dir=out
+}
+
+decoder_0_init() {
+	/usr/bin/gl_gpio.gpio set gpio20.sta=1
+	/usr/bin/gl_gpio.gpio set gpio19.sta=1
+	/usr/bin/gl_gpio.gpio set gpio18.sta=1
+}
+
+decoder_1_init() {
+	/usr/bin/gl_gpio.gpio set gpio21.sta=1
+	/usr/bin/gl_gpio.gpio set gpio22.sta=1
+	/usr/bin/gl_gpio.gpio set gpio23.sta=1
+}
+
+decoder_2_init() {
+	/usr/bin/gl_gpio.gpio set gpio6.sta=1
+	/usr/bin/gl_gpio.gpio set gpio24.sta=1
+	/usr/bin/gl_gpio.gpio set gpio8.sta=1
+}
+
+decoder_3_init() {
+	/usr/bin/gl_gpio.gpio set gpio14.sta=1
+	/usr/bin/gl_gpio.gpio set gpio15.sta=1
+	/usr/bin/gl_gpio.gpio set gpio16.sta=1
+}
+
+decoder_init() {
+	decoder_0_init
+	decoder_1_init
+	decoder_2_init
+	decoder_3_init
+}
+
+set_gpio_out
+decoder_init
+
+case $1 in
+	1)
+		/usr/bin/gl_gpio.gpio set gpio21.sta=0
+		/usr/bin/gl_gpio.gpio set gpio22.sta=1
+		/usr/bin/gl_gpio.gpio set gpio23.sta=1
+	;;
+	2)
+		/usr/bin/gl_gpio.gpio set gpio21.sta=1
+		/usr/bin/gl_gpio.gpio set gpio22.sta=0
+		/usr/bin/gl_gpio.gpio set gpio23.sta=1
+	;;
+	3)
+		/usr/bin/gl_gpio.gpio set gpio21.sta=0
+		/usr/bin/gl_gpio.gpio set gpio22.sta=0
+		/usr/bin/gl_gpio.gpio set gpio23.sta=1
+	;;
+	4)
+		/usr/bin/gl_gpio.gpio set gpio21.sta=1
+		/usr/bin/gl_gpio.gpio set gpio22.sta=1
+		/usr/bin/gl_gpio.gpio set gpio23.sta=0
+	;;
+	5)
+		/usr/bin/gl_gpio.gpio set gpio21.sta=0
+		/usr/bin/gl_gpio.gpio set gpio22.sta=1
+		/usr/bin/gl_gpio.gpio set gpio23.sta=0
+	;;
+	6)
+		/usr/bin/gl_gpio.gpio set gpio21.sta=1
+		/usr/bin/gl_gpio.gpio set gpio22.sta=0
+		/usr/bin/gl_gpio.gpio set gpio23.sta=0
+	;;
+	7)
+		/usr/bin/gl_gpio.gpio set gpio21.sta=0
+		/usr/bin/gl_gpio.gpio set gpio22.sta=0
+		/usr/bin/gl_gpio.gpio set gpio23.sta=0
+	;;
+	8)
+		/usr/bin/gl_gpio.gpio set gpio20.sta=1
+		/usr/bin/gl_gpio.gpio set gpio19.sta=1
+		/usr/bin/gl_gpio.gpio set gpio18.sta=0
+	;;
+	9)
+		/usr/bin/gl_gpio.gpio set gpio20.sta=1
+		/usr/bin/gl_gpio.gpio set gpio19.sta=0
+		/usr/bin/gl_gpio.gpio set gpio18.sta=1
+	;;
+	10)
+		/usr/bin/gl_gpio.gpio set gpio20.sta=1
+		/usr/bin/gl_gpio.gpio set gpio19.sta=0
+		/usr/bin/gl_gpio.gpio set gpio18.sta=0
+	;;
+	11)
+		/usr/bin/gl_gpio.gpio set gpio20.sta=0
+		/usr/bin/gl_gpio.gpio set gpio19.sta=1
+		/usr/bin/gl_gpio.gpio set gpio18.sta=1
+	;;
+	12)
+		/usr/bin/gl_gpio.gpio set gpio20.sta=0
+		/usr/bin/gl_gpio.gpio set gpio19.sta=1
+		/usr/bin/gl_gpio.gpio set gpio18.sta=0
+	;;
+	13)
+		/usr/bin/gl_gpio.gpio set gpio20.sta=0
+		/usr/bin/gl_gpio.gpio set gpio19.sta=0
+		/usr/bin/gl_gpio.gpio set gpio18.sta=1
+	;;
+	14)
+		/usr/bin/gl_gpio.gpio set gpio20.sta=0
+		/usr/bin/gl_gpio.gpio set gpio19.sta=0
+		/usr/bin/gl_gpio.gpio set gpio18.sta=0
+	;;
+	15)
+		/usr/bin/gl_gpio.gpio set gpio6.sta=0
+		/usr/bin/gl_gpio.gpio set gpio24.sta=1
+		/usr/bin/gl_gpio.gpio set gpio8.sta=1
+	;;
+	16)
+		/usr/bin/gl_gpio.gpio set gpio6.sta=1
+		/usr/bin/gl_gpio.gpio set gpio24.sta=0
+		/usr/bin/gl_gpio.gpio set gpio8.sta=1
+	;;
+	17)
+		/usr/bin/gl_gpio.gpio set gpio6.sta=0
+		/usr/bin/gl_gpio.gpio set gpio24.sta=0
+		/usr/bin/gl_gpio.gpio set gpio8.sta=1
+	;;
+	18)
+		/usr/bin/gl_gpio.gpio set gpio6.sta=1
+		/usr/bin/gl_gpio.gpio set gpio24.sta=1
+		/usr/bin/gl_gpio.gpio set gpio8.sta=0
+	;;
+	19)
+		/usr/bin/gl_gpio.gpio set gpio6.sta=0
+		/usr/bin/gl_gpio.gpio set gpio24.sta=1
+		/usr/bin/gl_gpio.gpio set gpio8.sta=0
+	;;
+	20)
+		/usr/bin/gl_gpio.gpio set gpio6.sta=1
+		/usr/bin/gl_gpio.gpio set gpio24.sta=0
+		/usr/bin/gl_gpio.gpio set gpio8.sta=0
+	;;
+	21)
+		/usr/bin/gl_gpio.gpio set gpio6.sta=0
+		/usr/bin/gl_gpio.gpio set gpio24.sta=0
+		/usr/bin/gl_gpio.gpio set gpio8.sta=0
+	;;
+	22)
+		/usr/bin/gl_gpio.gpio set gpio14.sta=0
+		/usr/bin/gl_gpio.gpio set gpio15.sta=1
+		/usr/bin/gl_gpio.gpio set gpio16.sta=1
+	;;
+	23)
+		/usr/bin/gl_gpio.gpio set gpio14.sta=1
+		/usr/bin/gl_gpio.gpio set gpio15.sta=0
+		/usr/bin/gl_gpio.gpio set gpio16.sta=1
+	;;
+	24)
+		/usr/bin/gl_gpio.gpio set gpio14.sta=0
+		/usr/bin/gl_gpio.gpio set gpio15.sta=0
+		/usr/bin/gl_gpio.gpio set gpio16.sta=1
+	;;
+	25)
+		/usr/bin/gl_gpio.gpio set gpio14.sta=1
+		/usr/bin/gl_gpio.gpio set gpio15.sta=1
+		/usr/bin/gl_gpio.gpio set gpio16.sta=0
+	;;
+	26)
+		/usr/bin/gl_gpio.gpio set gpio14.sta=0
+		/usr/bin/gl_gpio.gpio set gpio15.sta=1
+		/usr/bin/gl_gpio.gpio set gpio16.sta=0
+	;;
+	27)
+		/usr/bin/gl_gpio.gpio set gpio14.sta=1
+		/usr/bin/gl_gpio.gpio set gpio15.sta=0
+		/usr/bin/gl_gpio.gpio set gpio16.sta=0
+	;;
+	28)
+		/usr/bin/gl_gpio.gpio set gpio14.sta=0
+		/usr/bin/gl_gpio.gpio set gpio15.sta=0
+		/usr/bin/gl_gpio.gpio set gpio16.sta=0
+	;;
+	*)
+	;;
+esac
+
