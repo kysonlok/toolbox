@@ -34,3 +34,12 @@ set nobackup    " 不备份
 set ignorecase  " 忽略大小写的查找
 
 set tw=80       " set textwidth
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set noexpandtab |
+    \ set autoindent |
+    \ set fileformat=unix
