@@ -35,6 +35,14 @@ set ignorecase  " 忽略大小写的查找
 
 set tw=80       " set textwidth
 
+if has("autocmd")
+
+    " If the filetype is Makefile then we need to use tabs
+    " So do not expand tabs into space.
+    autocmd FileType make   set noexpandtab
+
+endif
+
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
